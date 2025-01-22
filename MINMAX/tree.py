@@ -66,8 +66,8 @@ def minmaxtree(position, depth, max_player, game, alpha = float('-inf'), beta = 
         #best_move = None
         
         for move in get_all_moves(position, WHITE, game): #gets all possible moves for position
-            if move.score() < s:       #testing to eliminate more moves
-                continue
+            # if move.score() < s:       #testing to eliminate more moves
+            #     continue
 
             evaluation = minmaxtree(move, depth - 1, False, game, alpha, beta)[0] #recursive call, [0] means it takes only the evaluation and not the path
             max_eval = max(max_eval, evaluation)
@@ -86,8 +86,8 @@ def minmaxtree(position, depth, max_player, game, alpha = float('-inf'), beta = 
         #best_move = None
 
         for move in get_all_moves(position, RED, game): #gets all possible moves for position
-            if move.score() < s:      #testing to eliminate more moves
-                continue
+            # if move.score() < s:      #testing to eliminate more moves
+            #     continue
 
             evaluation = minmaxtree(move, depth - 1, True, game, alpha, beta)[0] #recursive call, [0] means it takes only the evaluation and not the path
             min_eval = min(min_eval, evaluation)
